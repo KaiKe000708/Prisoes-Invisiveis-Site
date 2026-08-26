@@ -1,138 +1,43 @@
-/* ====================
-   DESIGN DARK POÉTICO (solucoes.css)
-==================== */
-
-body {
-  background-color: #0d0d0d;
-  color: #e6e6e6;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  scroll-behavior: smooth;
-}
-
-/* Cabeçalho */
-header {
+/* Lista de links úteis, no mesmo estilo "glass" dos cards do site */
+.link-list {
+  list-style: none;
+  width: 100%;
+  max-width: 800px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-list li a {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #151515;
-  border-bottom: 1px solid #2a2a2a;
-}
-
-header .logo {
-  width: 80px;
-  height: auto;
-  margin-right: 10px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: #fafafa;
-  text-align: center;
-  margin: 0;
-}
-
-/* Conteúdo principal */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  color: #cccccc;
-}
-
-main h2 {
-  font-size: 2em;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-main p {
-  font-size: 1.15em;
-  line-height: 1.8;
-  color: #ccc;
-  text-align: justify;
-  padding: 0 12px;
-  margin-bottom: 20px;
-}
-
-/* Listas e itens */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-  font-size: 1.1em;
-}
-
-ul li a {
-  color: #1e90ff;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: #ddd;
   text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
+  font-size: 1em;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-ul li a:hover {
-  color: #ff6347;
-}
-
-/* Botão de voltar */
-a.voltar-inicio {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 10px 20px;
-  background-color: #444;
+.link-list li a:hover {
+  transform: translateX(4px);
+  border-color: #8fd1ff;
+  background-color: rgba(255, 255, 255, 0.045);
   color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease;
 }
 
-a.voltar-inicio:hover {
-  background-color: #333;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #151515;
+.link-list li a span {
   color: #777;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-footer p {
-  margin: 0;
-  font-size: 0.9em;
-}
-
-/* Animações */
-.zoom-in {
-  animation: zoomIn 0.8s ease-in-out;
-}
-
-.fade-in {
-  animation: fadeIn 1.2s ease-in;
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.link-list li a:hover span {
+  color: #8fd1ff;
+  transform: translate(2px, -2px);
 }

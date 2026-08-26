@@ -21,11 +21,12 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/zoom.css" />
+  <link rel="stylesheet" href="../css/transitions.css" />
+  <link rel="stylesheet" href="../css/paginas-internas.css" />
+  <link rel="stylesheet" href="../css/tabela.css" />
 </head>
 
-<body>
+<body class="dark-theme">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN5CCXZX" height="0" width="0"
@@ -33,40 +34,42 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <canvas id="rain-canvas"></canvas>
+  <nav class="top-nav">
+    <a href="../index.html" class="btn-voltar">← Voltar para Início</a>
+    <span class="breadcrumb-info">/ Seção: <strong>Tabela</strong></span>
+  </nav>
 
-  <header>
-    <img src="../imagens/icone_uniube.svg" alt="Logo da Uniube" class="logo" />
-    <h1>Tabela de Causas e Dicas</h1>
-  </header>
+  <main class="page-content tema-tabela">
+    <div class="content-text">
+      <h1>Fatores que Causam Depressão, Burnout e Ansiedade</h1>
 
-  <main class="fade-in">
-    <section>
-      <h2>Fatores que Causam Depressão, Burnout e Ansiedade</h2>
-
-      <!-- Tabela simples -->
-      <table class="tabela-causas" border="1" cellspacing="0" cellpadding="8"
-        style="width: 100%; border-collapse: collapse; margin-bottom: 30px; color: #ccc;">
+      <table class="tabela-causas">
         <thead>
-          <tr style="background-color: #222; color: #fff;">
+          <tr>
             <th>Condição</th>
-            <th>Fatores Causadores</th>
+            <th>Principais Causas</th>
+            <th>Sinais de Alerta</th>
+            <th>Nível de Atenção</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Depressão</td>
-            <td>Fatores genéticos, estresse crônico, perdas pessoais, isolamento social, distúrbios hormonais</td>
+            <td data-label="Condição"><strong>Depressão</strong></td>
+            <td data-label="Principais Causas">Fatores genéticos, estresse crônico, perdas pessoais, isolamento social, distúrbios hormonais.</td>
+            <td data-label="Sinais de Alerta">Tristeza persistente, falta de energia, perda de interesse em atividades, alterações no sono.</td>
+            <td data-label="Nível de Atenção"><span class="nivel nivel-alto">Alto</span></td>
           </tr>
           <tr>
-            <td>Burnout</td>
-            <td>Excesso de trabalho, pressão constante, ambiente tóxico, falta de reconhecimento, desequilíbrio entre
-              vida pessoal e profissional</td>
+            <td data-label="Condição"><strong>Burnout</strong></td>
+            <td data-label="Principais Causas">Excesso de trabalho, pressão constante, ambiente tóxico, falta de reconhecimento, desequilíbrio entre vida pessoal e profissional.</td>
+            <td data-label="Sinais de Alerta">Exaustão física e mental, cinismo em relação ao trabalho, queda visível de produtividade.</td>
+            <td data-label="Nível de Atenção"><span class="nivel nivel-alto">Alto</span></td>
           </tr>
           <tr>
-            <td>Ansiedade</td>
-            <td>Preocupações excessivas, falta de controle, traumas, estilo de vida acelerado, relações interpessoais
-              conturbadas</td>
+            <td data-label="Condição"><strong>Ansiedade</strong></td>
+            <td data-label="Principais Causas">Preocupações excessivas, falta de controle, traumas, estilo de vida acelerado, relações interpessoais conturbadas.</td>
+            <td data-label="Sinais de Alerta">Tensão constante, dificuldade de concentração, problemas de sono, irritabilidade.</td>
+            <td data-label="Nível de Atenção"><span class="nivel nivel-moderado">Moderado a Alto</span></td>
           </tr>
         </tbody>
       </table>
@@ -75,7 +78,7 @@
         depressão, burnout e ansiedade. Embora cada pessoa possa ter diferentes experiências, é importante reconhecer
         esses fatores para agir de forma preventiva e buscar ajuda quando necessário.</p>
 
-      <h3>Dicas para Tratar e Prevenir</h3>
+      <h2>Dicas para Tratar e Prevenir</h2>
       <ul>
         <li><strong>Depressão:</strong> Buscar apoio de amigos, familiares e profissionais, praticar exercícios físicos
           e manter uma alimentação equilibrada.</li>
@@ -84,16 +87,12 @@
         <li><strong>Ansiedade:</strong> Técnicas de respiração profunda, meditação, reduzir a cafeína e dormir
           adequadamente.</li>
       </ul>
-
-      <a href="../index.html" class="voltar-inicio zoom-out">Voltar para a Página Inicial</a>
-    </section>
+</div>
   </main>
-
   <footer>
-    <p>&copy; 2024 Prisões Invisíveis. Todos os direitos reservados.</p>
+    <p>&copy; 2026 Prisões Invisíveis. Projeto acadêmico de Kaike Garcia Oliveira, RA: 5168489. Todos os direitos reservados.</p>
   </footer>
-
-  <script src="../js/script.js"></script>
+<script src="../js/transitions.js"></script>
 </body>
 
 </html>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Depressão</title>
   <link rel="stylesheet" href="../css/depressao.css" />
+  <link rel="stylesheet" href="../css/transitions.css" />
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -26,46 +27,177 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Vídeo de fundo -->
-  <video id="intro-video" autoplay muted playsinline>
-    <source src="../videos/3_1080p.mp4" type="video/mp4" />
-    Seu navegador não suporta vídeo HTML5.
-  </video>
+  <div class="hero-screen">
+    <!-- Vídeo de fundo -->
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="../videos/3_1080p.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
+    </video>
 
-  <!-- Fundo animado após o vídeo -->
-  <div id="background-overlay"></div>
+    <!-- Poeira flutuando devagar sobre o vídeo -->
+    <canvas id="dust-canvas"></canvas>
 
-  <!-- Conteúdo principal sobre o vídeo -->
-  <div id="main-content">
-    <header>
-      <h1>Depressão e Trabalho: A Prisão Moderna</h1>
-    </header>
-    <main>
-      <section>
-        <p>
-          A pressão por produtividade, metas inalcançáveis e o peso das contas vencendo te deixam sem ar.
-          No Brasil, milhões enfrentam jornadas de 10, 12 horas por dia, transporte lotado, salário baixo
-          e ainda ouvem: “você precisa ser grato por ter um emprego”.
-        </p>
-        <p>
-          A depressão se esconde entre sorrisos forçados e metas batidas. Vai chegando devagar: cansaço
-          constante, desânimo, insônia, perda de interesse. E quando você percebe, tá no modo automático.
-        </p>
-        <p>
-          Existem níveis: da tristeza constante ao colapso total. E ninguém está imune — nem quem parece
-          forte, nem quem "tem tudo". A saúde mental é tão essencial quanto respirar.
-        </p>
-        <p class="highlight">
-          Falar é o primeiro passo. Sentir não é fraqueza. Existe vida além da correria.
-        </p>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Prisões Invisíveis</p>
-    </footer>
+    <!-- Fundo animado após o vídeo -->
+    <div id="background-overlay"></div>
+
+    <!-- Conteúdo principal sobre o vídeo -->
+    <div id="main-content">
+      <header>
+        <h1>Depressão e Trabalho: A Prisão Moderna</h1>
+      </header>
+      <main>
+        <section>
+          <p>
+            A pressão por produtividade, metas inalcançáveis e o peso das contas vencendo tiram o ar de qualquer um.
+            No Brasil, milhões enfrentam jornadas de 10, 12 horas por dia, transporte lotado, salário baixo,
+            e ainda ouvem: “você precisa ser grato por ter um emprego”.
+          </p>
+          <p>
+            A CLT promete descanso, mas na prática vira letra morta na gaveta de quem tem medo de reclamar.
+            A depressão se esconde entre sorrisos forçados e metas batidas. Vai chegando devagar: cansaço
+            constante, desânimo, insônia, perda de interesse. E quando você percebe, já está no modo automático.
+          </p>
+          <p>
+            Existem níveis: da tristeza constante ao colapso total. E ninguém está imune, nem quem parece
+            forte, nem quem "tem tudo". A saúde mental é tão essencial quanto respirar.
+          </p>
+          <p class="highlight" id="highlight-quote">
+            Falar é o primeiro passo. Sentir não é fraqueza. Existe vida além da correria.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <a href="#isso-tambem" class="dep-scroll-cue" aria-label="Rolar para continuar">
+      <span>continue lendo</span>
+      <span class="dep-scroll-arrow">⌄</span>
+    </a>
   </div>
 
-  <!-- Botão de Voltar será adicionado via JavaScript -->
+  <div class="dep-page">
+
+    <nav class="dep-chapter-nav" aria-label="Navegação da página">
+      <a href="#isso-tambem" data-label="Sinais"></a>
+      <a href="#numeros-hoje" data-label="Números"></a>
+      <a href="#ajuda" data-label="Ajuda"></a>
+    </nav>
+
+    <section class="dep-section" id="isso-tambem">
+      <p class="dep-kicker">Nem sempre parece o que é</p>
+      <h2>Isso também é depressão</h2>
+      <p class="dep-lead">Boa parte do sofrimento passa despercebido porque não se parece com o que a gente imagina.
+        Não é sempre chorar no quarto escuro. Às vezes é exatamente o oposto disso.</p>
+
+      <div class="dep-cards">
+        <div class="dep-card" style="--accent:#8fd1ff;">
+          <h4>Depressão sorridente</h4>
+          <p>A pessoa que faz piada, que está sempre disponível, que parece "a mais forte do grupo". Por dentro, exausta.</p>
+        </div>
+        <div class="dep-card" style="--accent:#b98fff;">
+          <h4>Depressão funcional</h4>
+          <p>Continua indo ao trabalho, batendo metas, cumprindo prazos. Ninguém desconfia, porque por fora nada mudou.</p>
+        </div>
+        <div class="dep-card" style="--accent:#ff9b8f;">
+          <h4>Irritabilidade</h4>
+          <p>Em vez de tristeza, vem em forma de raiva curta, paciência zero, vontade de discutir por qualquer coisa.</p>
+        </div>
+        <div class="dep-card" style="--accent:#ffcf8f;">
+          <h4>Cansaço que não passa</h4>
+          <p>Dormir oito horas e acordar exausto. O corpo descansa, a mente não. E ninguém pergunta o porquê.</p>
+        </div>
+        <div class="dep-card" style="--accent:#8fffc9;">
+          <h4>Dores sem explicação</h4>
+          <p>Dor de cabeça, nas costas, no estômago. Exames não acusam nada. O corpo fala o que a boca não consegue dizer.</p>
+        </div>
+        <div class="dep-card" style="--accent:#ff8fb0;">
+          <h4>Excesso de produtividade</h4>
+          <p>Encher a agenda até não sobrar espaço pra pensar. Às vezes trabalhar demais é só um jeito de não parar e sentir.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dep-section dep-numbers">
+      <p class="dep-kicker">O peso que os números carregam</p>
+      <h2>Silêncio tem estatística</h2>
+      <div class="dep-numbers-grid">
+        <div class="dep-number-block">
+          <span class="dep-number">5,8%</span>
+          <p>da população brasileira vive com depressão. É a maior taxa da América Latina.</p>
+        </div>
+        <div class="dep-number-block">
+          <span class="dep-number">78,8%</span>
+          <p>de quem tem sintomas depressivos importantes não recebe nenhum tipo de tratamento.</p>
+        </div>
+      </div>
+      <p class="dep-source">Fontes: Organização Mundial da Saúde (OMS) e Pesquisa Nacional de Saúde.</p>
+    </section>
+
+    <section class="dep-section dep-chart" id="numeros-hoje">
+      <p class="dep-kicker">A escalada recente</p>
+      <h2>Trabalho e depressão: então x agora</h2>
+      <p class="dep-lead">Não é impressão. Em apenas dois anos, o número de brasileiros afastados do trabalho por
+        transtornos mentais praticamente dobrou.</p>
+
+      <div class="dep-chart-wrap">
+        <div class="dep-bar-group">
+          <div class="dep-bar" style="--target-h: 54%;">
+            <span class="dep-bar-value" data-count-to="288865">0</span>
+          </div>
+          <span class="dep-bar-label">2023</span>
+        </div>
+        <div class="dep-bar-group">
+          <div class="dep-bar" style="--target-h: 88%;">
+            <span class="dep-bar-value" data-count-to="472328">0</span>
+          </div>
+          <span class="dep-bar-label">2024</span>
+        </div>
+        <div class="dep-bar-group dep-bar-group-highlight">
+          <div class="dep-bar" style="--target-h: 100%;">
+            <span class="dep-bar-value" data-count-to="534904">0</span>
+          </div>
+          <span class="dep-bar-label">2025</span>
+        </div>
+      </div>
+
+      <p class="dep-chart-badge">+85% em dois anos</p>
+      <p class="dep-source">Fonte: Ministério da Previdência Social / INSS, via Agência Brasil e relatório Data Cajuína
+        (jan. 2026). Total de benefícios por incapacidade concedidos por transtornos mentais e comportamentais.</p>
+    </section>
+
+    <section class="dep-section dep-help" id="ajuda">
+      <p class="dep-kicker">Se isso tocou em algo</p>
+      <h2>Você não precisa carregar isso sozinho</h2>
+      <p class="dep-lead">Se identificar com este texto não é fraqueza, é um sinal. E sinais servem pra gente prestar atenção
+        neles, não pra ignorar.</p>
+
+      <div class="dep-help-box">
+        <div class="dep-help-item">
+          <h4>CVV: Centro de Valorização da Vida</h4>
+          <p>Ligue <strong>188</strong>, a qualquer hora, todos os dias. Ligação gratuita e sigilosa.</p>
+        </div>
+        <div class="dep-help-item">
+          <h4>Converse com alguém de confiança</h4>
+          <p>Um amigo, um familiar, um professor. Nomear o que você sente já é um primeiro passo.</p>
+        </div>
+        <div class="dep-help-item">
+          <h4>Procure ajuda profissional</h4>
+          <p>Psicólogos e psiquiatras existem justamente para isso. Pedir ajuda é ato de cuidado, não de fraqueza.</p>
+        </div>
+      </div>
+
+      <div class="dep-cta-links">
+        <a href="solucoes.html" class="dep-cta-btn">Ver estratégias de enfrentamento</a>
+        <a href="links.html" class="dep-cta-btn dep-cta-btn-outline">Mais links de apoio</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="dep-footer">
+    <p>&copy; 2026 Prisões Invisíveis. Projeto acadêmico de Kaike Garcia Oliveira, RA: 5168489. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../js/transitions.js"></script>
 
   <script src="../js/depressao.js"></script>
 </body>

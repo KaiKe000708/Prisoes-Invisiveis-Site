@@ -1,0 +1,445 @@
+/* =========================================================
+   PADRÃO COMPARTILHADO DE PÁGINA INTERNA
+   Usado por todas as páginas de conteúdo (ansiedade, burnout,
+   depressão, rotina, impacto, soluções, tabela, links, fotos,
+   contato...). Mantém tudo com a mesma barra de voltar e o
+   mesmo tipo de card, prontos para receber fotos.
+========================================================= */
+
+body.dark-theme {
+  background-color: #0d0d0d;
+  color: #e6e6e6;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 22px 20px;
+  color: #777;
+  font-size: 0.85em;
+  border-top: 1px solid #232323;
+  background-color: #101010;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---- Barra de voltar + breadcrumb (topo de toda página interna) ---- */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px clamp(20px, 5vw, 60px);
+  background-color: #151515;
+  border-bottom: 1px solid #2a2a2a;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.btn-voltar {
+  color: #bbb;
+  background-color: transparent;
+  border: 1px solid #555;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.btn-voltar:hover {
+  background-color: #222;
+  color: #fff;
+  border-color: #aaa;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Botão de voltar no fim do artigo: precisa de respiro em relação ao texto acima */
+.content-text > .btn-voltar {
+  display: inline-block;
+  margin-top: 36px;
+}
+
+.breadcrumb-info {
+  font-size: 0.9em;
+  color: #999;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Contêiner de conteúdo central ---- */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px 70px;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+/* ---- Bloco de imagem de destaque (topo do artigo) ---- */
+.content-hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content-hero img {
+  width: 280px;
+  max-width: 90%;
+  border-radius: 10px;
+  filter: grayscale(100%) contrast(115%);
+  transition: all 0.4s ease-in-out;
+}
+
+.content-hero img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1.1) contrast(1.08);
+}
+
+/* ---- Texto principal do artigo ---- */
+.content-text {
+  width: 100%;
+}
+
+.content-text h1 {
+  font-size: 2.3em;
+  margin-bottom: 20px;
+  color: #fafafa;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.content-text h2 {
+  font-size: 1.7em;
+  margin: 30px 0 14px;
+  color: #fafafa;
+}
+
+.content-text h3 {
+  font-size: 1.3em;
+  margin: 24px 0 10px;
+  color: #eee;
+}
+
+.content-text p {
+  font-size: 1.08em;
+  line-height: 1.85;
+  color: #ccc;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+
+.content-text p.lead {
+  padding-left: 14px;
+  border-left: 4px solid var(--accent, #3a3a3a);
+  font-size: 1.15em;
+  color: #e4e4e4;
+}
+
+.content-text ul {
+  margin: 0 0 18px 20px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.content-text ul li {
+  margin-bottom: 6px;
+}
+
+.content-text strong {
+  color: #f2f2f2;
+}
+
+/* ---- Grade de cards (com foto de fundo, prontos para você adicionar imagens) ---- */
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.info-card {
+  position: relative;
+  width: 280px;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1e1e1e, #101010 75%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.4s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: default;
+  opacity: 0.92;
+  border: 1px solid #262626;
+}
+
+.info-card:hover {
+  transform: scale(1.035) translateY(-4px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.4), 0 0 24px rgba(255, 255, 255, 0.06);
+  opacity: 1;
+  filter: brightness(1.03) contrast(1.03);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.3));
+  transition: background 0.3s ease;
+}
+
+.info-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.22));
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  color: #fff;
+}
+
+.card-content h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin: 10px 0 6px;
+  letter-spacing: 0.5px;
+}
+
+.card-content h4::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent, #888);
+  box-shadow: 0 0 8px var(--accent, #888);
+}
+
+.card-content h3,
+.card-content h2 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #f9f9f9;
+}
+
+.card-content p {
+  font-size: 0.93em;
+  color: #e0e0e0;
+  line-height: 1.55;
+}
+
+/* ---- Variação de cor de destaque por página (usar no <main style="--accent:...">) ---- */
+.tema-ansiedade   { --accent: #8f9bff; }
+.tema-burnout     { --accent: #ff9b8f; }
+.tema-depressao   { --accent: #8fd1ff; }
+.tema-rotina      { --accent: #b98fff; }
+.tema-impacto     { --accent: #ffcf8f; }
+.tema-solucoes    { --accent: #8fffc9; }
+.tema-tabela      { --accent: #ffdd8f; }
+.tema-links       { --accent: #8fd1ff; }
+.tema-fotos       { --accent: #ffb0e0; }
+.tema-contato     { --accent: #9bff8f; }
+.tema-vicios      { --accent: #ffcf8f; }
+
+@media (max-width: 640px) {
+  .top-nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   LINHA DO TEMPO (componente original, com trilho e marcador
+   numerado). Usa a cor de destaque --accent da página.
+========================================================= */
+.timeline-section {
+  width: 100%;
+}
+
+.timeline {
+  list-style: none;
+  position: relative;
+  margin: 30px 0 0;
+  padding-left: 50px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent, #666), rgba(255, 255, 255, 0.05));
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 34px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #141414;
+  border: 2px solid var(--accent, #666);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-content {
+  background-color: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: var(--accent, #666);
+  background-color: rgba(255, 255, 255, 0.04);
+  transform: translateX(4px);
+}
+
+.timeline-item:hover .timeline-marker {
+  background: var(--accent, #666);
+  color: #111;
+}
+
+.timeline-content h4 {
+  font-size: 1.05em;
+  color: #fafafa;
+  margin-bottom: 6px;
+}
+
+.timeline-content p {
+  font-size: 0.95em;
+  color: #bbb;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+.timeline-source {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 18px;
+}
+
+@media (max-width: 500px) {
+  .timeline {
+    padding-left: 40px;
+  }
+  .timeline-marker {
+    left: -40px;
+    width: 26px;
+    height: 26px;
+    font-size: 0.7em;
+  }
+}
+
+/* =========================================================
+   CARDS COM ÍCONE (grade estilo "bento" para listas de
+   estratégias/dicas, com micro-interação no hover).
+========================================================= */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #262626;
+  border-radius: 14px;
+  padding: 22px;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent, #666);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 14px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background: var(--accent, #666);
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.feature-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #eee;
+  transition: stroke 0.3s ease;
+}
+
+.feature-card:hover .feature-icon svg {
+  stroke: #111;
+}
+
+.feature-card h4 {
+  font-size: 1.05em;
+  color: #fafafa;
+  margin-bottom: 6px;
+}
+
+.feature-card p {
+  font-size: 0.93em;
+  color: #b8b8b8;
+  line-height: 1.55;
+  margin: 0;
+  text-align: left;
+}

@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato - Prisões Invisíveis</title>
+  <link rel="stylesheet" href="../css/transitions.css" />
+  <link rel="stylesheet" href="../css/paginas-internas.css" />
   <link rel="stylesheet" href="../css/contato.css">
 
   <!-- Google Tag Manager -->
@@ -25,18 +28,18 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header>
-    <img src="../imagens/icone_uniube.svg" alt="Logo Uniube" class="logo">
-    <h1>Fale Conosco</h1>
-  </header>
+  <nav class="top-nav">
+    <a href="../index.html" class="btn-voltar">← Voltar para Início</a>
+    <span class="breadcrumb-info">/ Seção: <strong>Contato</strong></span>
+  </nav>
 
-  <main class="fade-in">
-    <section class="contato-container">
-      <h2>Você não está sozinho</h2>
+  <main class="page-content tema-contato">
+    <div class="content-text contato-container">
+      <h1>Você não está sozinho</h1>
       <p>Se você está passando por um momento difícil ou quer conversar, preencha o formulário abaixo. Estamos aqui para
         ouvir.</p>
 
-      <form class="formulario">
+      <form class="formulario" id="form-contato">
         <label for="nome">Seu nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -47,15 +50,15 @@
         <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
         <button type="submit">Enviar mensagem</button>
+        <p id="form-status" class="form-status"></p>
       </form>
-
-      <a href="../index.html" class="voltar-inicio">Voltar para a Página Inicial</a>
-    </section>
+</div>
   </main>
-
   <footer>
-    <p>Desenvolvido por Kaike Garcia Oliveira • RA: 5168489</p>
+    <p>&copy; 2026 Prisões Invisíveis. Projeto acadêmico de Kaike Garcia Oliveira, RA: 5168489. Todos os direitos reservados.</p>
   </footer>
+<script src="../js/transitions.js"></script>
+<script src="../js/contato.js"></script>
 </body>
 
 </html>

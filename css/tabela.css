@@ -1,152 +1,117 @@
-/* ====================
-   DESIGN DARK POÉTICO (style.css)
-==================== */
+/* Tabela de causas, versão moderna: cabeçalho com destaque, selos
+   de nível de atenção coloridos e transformação em cards no celular */
 
-body {
-  background-color: #0d0d0d;
-  color: #e6e6e6;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  scroll-behavior: smooth;
-}
-
-/* Cabeçalho */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #151515;
-  border-bottom: 1px solid #2a2a2a;
-}
-
-header .logo {
-  width: 80px;
-  height: auto;
-  margin-right: 10px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: #fafafa;
-  text-align: center;
-  margin: 0;
-}
-
-/* Conteúdo principal */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  color: #cccccc;
-}
-
-main h2 {
-  font-size: 2em;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-main p {
-  font-size: 1.15em;
-  line-height: 1.8;
-  color: #ccc;
-  text-align: justify;
-  padding: 0 12px;
-  margin-bottom: 20px;
-}
-
-/* Tabela */
 .tabela-causas {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0 34px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid #262626;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 .tabela-causas th,
 .tabela-causas td {
-  padding: 15px;
+  padding: 16px 20px;
   text-align: left;
-  border: 1px solid #333;
+  vertical-align: top;
 }
 
-.tabela-causas th {
-  background-color: #222;
-  color: #fafafa;
-}
-
-.tabela-causas td {
-  background-color: #333;
-}
-
-.tabela-causas ul {
-  padding-left: 20px;
-}
-
-.tabela-causas ul li {
-  margin-bottom: 5px;
-}
-
-/* Botão de voltar */
-a.voltar-inicio {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 30px;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  text-decoration: none;
-  border: 2px solid #555;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 1.1em;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-a.voltar-inicio:hover {
-  background-color: #111;
+.tabela-causas thead th {
+  background-color: #171717;
   color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  font-size: 0.78em;
+  letter-spacing: 0.6px;
+  border-bottom: 1px solid #2c2c2c;
 }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #151515;
-  color: #777;
+.tabela-causas tbody td {
+  color: #ccc;
+  font-size: 0.96em;
+  line-height: 1.55;
+  border-bottom: 1px solid #212121;
 }
 
-footer p {
-  margin: 0;
-  font-size: 0.9em;
+.tabela-causas tbody tr:last-child td {
+  border-bottom: none;
 }
 
-/* Animações */
-.zoom-in {
-  animation: zoomIn 0.8s ease-in-out;
+.tabela-causas tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.015);
 }
 
-.fade-in {
-  animation: fadeIn 1.2s ease-in;
+.tabela-causas tbody tr {
+  transition: background-color 0.25s ease;
 }
 
-@keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
+.tabela-causas tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.045);
+}
+
+.tabela-causas tbody tr:hover td {
+  color: #fff;
+}
+
+/* Selo de nível de atenção */
+.nivel {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.82em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nivel-alto {
+  background-color: rgba(255, 107, 107, 0.12);
+  color: #ff9b9b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.nivel-moderado {
+  background-color: rgba(255, 205, 107, 0.12);
+  color: #ffd98f;
+  border: 1px solid rgba(255, 205, 107, 0.3);
+}
+
+/* Responsivo: a tabela vira uma pilha de cards no celular */
+@media (max-width: 700px) {
+  .tabela-causas thead {
+    display: none;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .tabela-causas,
+  .tabela-causas tbody,
+  .tabela-causas tr,
+  .tabela-causas td {
+    display: block;
+    width: 100%;
   }
-  to {
-    opacity: 1;
+
+  .tabela-causas tr {
+    padding: 16px 18px;
+    border-bottom: 1px solid #262626;
+  }
+
+  .tabela-causas tr:last-child {
+    border-bottom: none;
+  }
+
+  .tabela-causas td {
+    border-bottom: none;
+    padding: 6px 0;
+  }
+
+  .tabela-causas td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 4px;
   }
 }
