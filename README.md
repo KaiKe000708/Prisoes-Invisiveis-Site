@@ -2,7 +2,7 @@
 
 Site interativo desenvolvido como atividade curricular da faculdade, com o objetivo de refletir sobre os impactos da pressão profissional e acadêmica na saúde mental de jovens | abordando temas como ansiedade, burnout, depressão, vícios e rotina de sobrecarga.
 
-🔗 **[Acessar o site](https://kaike000708.github.io/prisoes-invisiveis-site/)**
+🔗 **[Acessar o site](https://kaike000708.github.io/Prisoes-Invisiveis-Site/)**
 
 ---
 
