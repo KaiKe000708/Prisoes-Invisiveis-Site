@@ -1,0 +1,43 @@
+/* Lista de links úteis, no mesmo estilo "glass" dos cards do site */
+.link-list {
+  list-style: none;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1em;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.link-list li a:hover {
+  transform: translateX(4px);
+  border-color: #8fd1ff;
+  background-color: rgba(255, 255, 255, 0.045);
+  color: #fff;
+}
+
+.link-list li a span {
+  color: #777;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.link-list li a:hover span {
+  color: #8fd1ff;
+  transform: translate(2px, -2px);
+}

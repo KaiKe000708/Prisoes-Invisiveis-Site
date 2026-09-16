@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Prisões Invisíveis</title>
+  <link rel="stylesheet" href="../css/transitions.css" />
+  <link rel="stylesheet" href="../css/paginas-internas.css" />
+  <link rel="stylesheet" href="../css/contato.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TN5CCXZX');</script>
+  <!-- End Google Tag Manager -->
+
+</head>
+
+<body class="dark-theme">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN5CCXZX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="top-nav">
+    <a href="../index.html" class="btn-voltar">← Voltar para Início</a>
+    <span class="breadcrumb-info">/ Seção: <strong>Contato</strong></span>
+  </nav>
+
+  <main class="page-content tema-contato">
+
+    <section class="contato-hero">
+      <div class="contato-hero-image">
+        <img src="../imagens/contato/Limite.webp" alt="Ilustração sobre limites e pedir ajuda">
+      </div>
+      <div class="contato-hero-text">
+        <h1>Você não está sozinho</h1>
+        <p>Se você está passando por um momento difícil ou quer conversar, preencha o formulário ao lado. Estamos
+          aqui para ouvir, sem julgamento.</p>
+        <p class="contato-urgente">Se for uma emergência agora, ligue para o CVV: <strong>188</strong> (gratuito, 24h).</p>
+      </div>
+    </section>
+
+    <div class="content-text contato-container">
+      <form class="formulario" id="form-contato">
+        <label for="nome">Seu nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Seu e-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Sua mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button type="submit">Enviar mensagem</button>
+        <p id="form-status" class="form-status"></p>
+      </form>
+</div>
+  </main>
+  <footer>
+    <p>&copy; 2026 Prisões Invisíveis. Projeto acadêmico de Kaike Garcia Oliveira, RA: 5168489. Todos os direitos reservados.</p>
+  </footer>
+<script src="../js/transitions.js"></script>
+<script src="../js/contato.js"></script>
+</body>
+
+</html>

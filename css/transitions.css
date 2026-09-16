@@ -1,0 +1,131 @@
+/* =======================================================
+   TRANSIÇÃO PADRÃO DE PÁGINA (entrada e saída)
+   Use este arquivo em TODAS as páginas do site.
+   Não precisa de nenhuma classe extra no <body> para
+   funcionar: a entrada acontece sozinha, e a saída é
+   controlada pelo js/transitions.js (classe .page-exit).
+======================================================= */
+
+:root {
+  --page-transition-duration: 0.5s;
+}
+
+body {
+  animation: pageEnter var(--page-transition-duration) ease-out forwards;
+}
+
+body.page-exit {
+  animation: pageExit var(--page-transition-duration) ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body.page-exit {
+    animation: none !important;
+  }
+}
+
+/* Título de seção "revelado" ao rolar a página (efeito de cortina) */
+.reveal-heading {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.reveal-heading.revealed {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-heading {
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
+
+/* Faixa de texto em movimento (marquee) */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 16px 0;
+  background-color: #101010;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 40px;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.marquee span {
+  font-size: 0.95em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.marquee span::after {
+  content: '•';
+  color: #444;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+/* Link do menu correspondente à página atual */
+.menu a.active {
+  color: #fff;
+}
+
+.menu a.active::before {
+  width: 80%;
+  background: #fff;
+}
+
+/* Barra de progresso de leitura, fixa no topo */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #7d86ff, #ffffff);
+  z-index: 999;
+  transition: width 0.1s linear;
+}

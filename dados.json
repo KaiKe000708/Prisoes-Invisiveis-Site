@@ -1,0 +1,30 @@
+[
+  {
+    "condicao": "Depressão",
+    "causas": "Fatores genéticos, estresse crônico, perdas pessoais, isolamento social, distúrbios hormonais.",
+    "sinais": "Tristeza persistente, falta de energia, perda de interesse em atividades, alterações no sono.",
+    "nivel": "Alto",
+    "nivelClasse": "alto"
+  },
+  {
+    "condicao": "Burnout",
+    "causas": "Excesso de trabalho, pressão constante, ambiente tóxico, falta de reconhecimento, desequilíbrio entre vida pessoal e profissional.",
+    "sinais": "Exaustão física e mental, cinismo em relação ao trabalho, queda visível de produtividade.",
+    "nivel": "Alto",
+    "nivelClasse": "alto"
+  },
+  {
+    "condicao": "Ansiedade",
+    "causas": "Preocupações excessivas, falta de controle, traumas, estilo de vida acelerado, relações interpessoais conturbadas.",
+    "sinais": "Tensão constante, dificuldade de concentração, problemas de sono, irritabilidade.",
+    "nivel": "Moderado a Alto",
+    "nivelClasse": "moderado"
+  },
+  {
+    "condicao": "Vícios (álcool e cigarro)",
+    "causas": "Fuga do estresse, alívio emocional temporário, pressão social e desejo de pertencimento.",
+    "sinais": "Tolerância crescente, uso como única forma de relaxar, dependência mesmo em uso considerado social.",
+    "nivel": "Alto",
+    "nivelClasse": "alto"
+  }
+]

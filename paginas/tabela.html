@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabela - Prisões Invisíveis</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TN5CCXZX' + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TN5CCXZX');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="../css/transitions.css" />
+  <link rel="stylesheet" href="../css/paginas-internas.css" />
+  <link rel="stylesheet" href="../css/tabela.css" />
+</head>
+
+<body class="dark-theme">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN5CCXZX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="top-nav">
+    <a href="../index.html" class="btn-voltar">← Voltar para Início</a>
+    <span class="breadcrumb-info">/ Seção: <strong>Tabela</strong></span>
+  </nav>
+
+  <main class="page-content tema-tabela">
+    <div class="content-text">
+      <h1>Fatores que Causam Depressão, Burnout, Ansiedade e Vícios</h1>
+      <p class="lead">Busque por qualquer palavra (uma condição, uma causa, um sinal) e clique no título de uma coluna para ordenar por ela.</p>
+
+      <div class="tabela-busca-wrap">
+        <svg class="tabela-busca-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="tabela-busca" class="tabela-busca" placeholder="Buscar na tabela... (ex: sono, trabalho, Alto)" aria-label="Buscar na tabela">
+      </div>
+
+      <p id="tabela-contador" class="tabela-contador" aria-live="polite"></p>
+
+      <table class="tabela-causas">
+        <thead>
+          <tr>
+            <th data-col="condicao">Condição</th>
+            <th data-col="causas">Principais Causas</th>
+            <th data-col="sinais">Sinais de Alerta</th>
+            <th data-col="nivel">Nível de Atenção</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo">
+          <tr class="tabela-carregando">
+            <td colspan="4">Carregando dados...</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tabela-legenda">
+        <span class="tabela-legenda-item"><span class="nivel nivel-alto">Alto</span> requer atenção prioritária e, de preferência, acompanhamento profissional.</span>
+        <span class="tabela-legenda-item"><span class="nivel nivel-moderado">Moderado a Alto</span> já impacta o dia a dia e vale a pena observar e agir cedo.</span>
+      </div>
+
+      <p>A tabela acima apresenta os principais fatores que contribuem para o desenvolvimento de condições como a
+        depressão, burnout, ansiedade e vícios. Embora cada pessoa possa ter diferentes experiências, é importante reconhecer
+        esses fatores para agir de forma preventiva e buscar ajuda quando necessário.</p>
+
+      <h2>Dicas para Tratar e Prevenir</h2>
+      <ul>
+        <li><strong>Depressão:</strong> Buscar apoio de amigos, familiares e profissionais, praticar exercícios físicos
+          e manter uma alimentação equilibrada.</li>
+        <li><strong>Burnout:</strong> Fazer pausas regulares no trabalho, estabelecer limites claros, procurar apoio
+          psicológico e praticar atividades relaxantes.</li>
+        <li><strong>Ansiedade:</strong> Técnicas de respiração profunda, meditação, reduzir a cafeína e dormir
+          adequadamente.</li>
+        <li><strong>Vícios:</strong> Buscar ajuda no CAPS AD ou CVV, identificar os gatilhos e substituir o hábito por uma rede de apoio real.</li>
+      </ul>
+
+      <div class="tabela-links-finais">
+        <a href="solucoes.html" class="btn-voltar">Ver estratégias de enfrentamento</a>
+        <a href="contato.html" class="btn-voltar">Falar com alguém agora</a>
+      </div>
+</div>
+  </main>
+  <footer>
+    <p>&copy; 2026 Prisões Invisíveis. Projeto acadêmico de Kaike Garcia Oliveira, RA: 5168489. Todos os direitos reservados.</p>
+  </footer>
+<script src="../js/transitions.js"></script>
+<script src="../js/tabela.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+/* Tabela de causas, versão moderna: cabeçalho com destaque, selos
+   de nível de atenção coloridos e transformação em cards no celular */
+
+/* Campo de busca */
+.tabela-busca-wrap {
+  position: relative;
+  max-width: 420px;
+  margin: 10px 0 22px;
+}
+
+.tabela-busca-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  stroke: #777;
+  pointer-events: none;
+}
+
+.tabela-busca {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #eee;
+  font-family: inherit;
+  font-size: 0.95em;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.tabela-busca:focus {
+  outline: none;
+  border-color: #ffdd8f;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.tabela-busca::placeholder {
+  color: #777;
+}
+
+.tabela-causas {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0 34px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid #262626;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.tabela-causas th,
+.tabela-causas td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela-causas thead th {
+  background-color: #171717;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.78em;
+  letter-spacing: 0.6px;
+  border-bottom: 1px solid #2c2c2c;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 30px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.tabela-causas thead th:hover,
+.tabela-causas thead th:focus-visible {
+  background-color: #202020;
+  color: #ffdd8f;
+}
+
+.tabela-causas thead th:focus-visible {
+  outline: 2px solid #ffdd8f;
+  outline-offset: -2px;
+}
+
+/* Setinha indicadora de ordenação */
+.tabela-causas thead th::after {
+  content: '↕';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 0.9em;
+}
+
+.tabela-causas thead th.th-sorted-asc::after {
+  content: '↑';
+  color: #ffdd8f;
+}
+
+.tabela-causas thead th.th-sorted-desc::after {
+  content: '↓';
+  color: #ffdd8f;
+}
+
+.tabela-causas tbody td {
+  color: #ccc;
+  font-size: 0.96em;
+  line-height: 1.55;
+  border-bottom: 1px solid #212121;
+}
+
+.tabela-causas tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela-causas tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.tabela-causas tbody tr {
+  transition: background-color 0.25s ease;
+}
+
+.tabela-causas tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.045);
+}
+
+.tabela-causas tbody tr:hover td {
+  color: #fff;
+}
+
+/* Selo de nível de atenção */
+.nivel {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.82em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nivel-alto {
+  background-color: rgba(255, 107, 107, 0.12);
+  color: #ff9b9b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.nivel-moderado {
+  background-color: rgba(255, 205, 107, 0.12);
+  color: #ffd98f;
+  border: 1px solid rgba(255, 205, 107, 0.3);
+}
+
+.tabela-carregando td,
+.tabela-vazia td {
+  color: #888;
+  text-align: center;
+  font-style: italic;
+  padding: 26px 20px;
+}
+
+.tabela-contador {
+  font-size: 0.85em;
+  color: #888;
+  margin: -6px 0 10px;
+}
+
+.tabela-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin: -14px 0 30px;
+}
+
+.tabela-legenda-item {
+  font-size: 0.85em;
+  color: #999;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tabela-links-finais {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Responsivo: a tabela vira uma pilha de cards no celular */
+@media (max-width: 700px) {
+  .tabela-causas thead {
+    display: none;
+  }
+
+  .tabela-causas,
+  .tabela-causas tbody,
+  .tabela-causas tr,
+  .tabela-causas td {
+    display: block;
+    width: 100%;
+  }
+
+  .tabela-causas tr {
+    padding: 16px 18px;
+    border-bottom: 1px solid #262626;
+  }
+
+  .tabela-causas tr:last-child {
+    border-bottom: none;
+  }
+
+  .tabela-causas td {
+    border-bottom: none;
+    padding: 6px 0;
+  }
+
+  .tabela-causas td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+}
