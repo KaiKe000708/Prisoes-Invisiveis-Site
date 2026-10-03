@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------------------------------------
   // 1) Busca os dados da tabela num JSON local (fetch real, sem servidor)
   // ------------------------------------------------------------------
-  fetch("../dados.json")
+  fetch("../json/dados.json")
     .then((res) => {
       if (!res.ok) throw new Error("Resposta não OK: " + res.status);
       return res.json();
