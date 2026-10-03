@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kaike000708.github.io/prisoes-invisiveis-site/sitemap.xml

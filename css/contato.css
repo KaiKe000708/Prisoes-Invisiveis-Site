@@ -1,0 +1,166 @@
+/* Formulário de contato, dark/minimalista */
+
+/* ---- Bloco de abertura: imagem + texto lado a lado ---- */
+.contato-hero {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto 10px;
+}
+
+.contato-hero-image {
+  flex: 1 1 260px;
+  max-width: 300px;
+}
+
+.contato-hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.contato-hero-image img:hover {
+  filter: grayscale(0%) contrast(1.08);
+  transform: scale(1.02);
+}
+
+.contato-hero-text {
+  flex: 1 1 320px;
+  text-align: left;
+}
+
+.contato-hero-text h1 {
+  font-size: 2.1em;
+  margin-bottom: 14px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 26px rgba(255, 255, 255, 0.08);
+}
+
+.contato-hero-text p {
+  color: #d2d2d2;
+  font-size: 1.02em;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.contato-urgente {
+  display: inline-block;
+  background-color: rgba(255, 143, 143, 0.1);
+  border: 1px solid rgba(255, 143, 143, 0.35);
+  border-radius: 10px;
+  padding: 10px 16px;
+  color: #ffb0b0 !important;
+  font-size: 0.92em !important;
+}
+
+.contato-urgente strong {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+/* ---- Formulário ---- */
+.contato-container {
+  max-width: 560px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #262626;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.formulario label {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 12px;
+}
+
+.formulario input,
+.formulario textarea {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #eee;
+  font-family: inherit;
+  font-size: 1em;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.formulario textarea {
+  resize: none;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #9bff8f;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.formulario button {
+  margin-top: 20px;
+  padding: 14px;
+  border: 1px solid #555;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formulario button:hover {
+  background-color: #fff;
+  color: #111;
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.formulario button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+.form-status {
+  margin-top: 12px;
+  font-size: 0.88em;
+  color: #9bff8f;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.form-status.show {
+  opacity: 1;
+}
+
+.form-status.form-status-erro {
+  color: #ff9b9b;
+}
+
+@media (max-width: 700px) {
+  .contato-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contato-hero-text {
+    text-align: center;
+  }
+  .formulario {
+    padding: 22px;
+  }
+}

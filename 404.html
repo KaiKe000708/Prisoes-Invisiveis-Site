@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página não encontrada, Prisões Invisíveis</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="imagens/favicon/apple-touch-icon.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      background-color: #0a0a0a;
+      color: #e6e6e6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    #rain-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
+
+    .err-container {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .err-code {
+      font-size: clamp(4rem, 18vw, 8rem);
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .err-title {
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      font-weight: 600;
+      color: #eee;
+      margin-bottom: 16px;
+    }
+
+    .err-text {
+      max-width: 480px;
+      color: #aaa;
+      font-size: 1.02em;
+      line-height: 1.7;
+      margin-bottom: 34px;
+    }
+
+    .err-btn {
+      display: inline-block;
+      padding: 13px 30px;
+      border-radius: 999px;
+      background-color: #fff;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .err-btn:hover {
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #rain-canvas { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="rain-canvas"></canvas>
+
+  <div class="err-container">
+    <p class="err-code">404</p>
+    <p class="err-title">Essa página não existe, ou deixou de existir.</p>
+    <p class="err-text">Assim como muita coisa na vida, às vezes o caminho que a gente procura simplesmente não está
+      mais aqui. Mas o resto do site continua no lugar.</p>
+    <a href="index.html" class="err-btn">Voltar para o início</a>
+  </div>
+
+  <script src="js/rain.js"></script>
+</body>
+
+</html>
